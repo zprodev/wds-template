@@ -1,13 +1,13 @@
 {
   "name": "dev-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run mkdist & npm run cphtml & webpack-dev-server",
-    "build": "npm run mkdist & npm run cphtml & webpack",
-    "mkdist": "rmdir dist & mkdir -p dist",
-    "cphtml": "cp src/index.html dist"
+    "start": "npm run mkdist && npm run cphtml && webpack-dev-server",
+    "build": "npm run mkdist && npm run cphtml && webpack",
+    "mkdist": "rm -R dist/ && mkdir -p dist/",
+    "cphtml": "cp src/index.html dist/"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
