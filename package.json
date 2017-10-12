@@ -13,10 +13,11 @@
     "start": "npm run mkdist && npm run cphtml && webpack-dev-server",
     "build": "npm run mkdist && npm run cphtml && webpack",
     "mkdist": "rimraf dist/ && mkdirp dist/",
-    "cphtml": "cp src/index.html dist/"
+    "cphtml": "cpx src/index.html dist/"
   },
   "dependencies": {},
   "devDependencies": {
+    "cpx": "^1.5.0",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.6.2",
     "babel-core": "^6.26.0",
