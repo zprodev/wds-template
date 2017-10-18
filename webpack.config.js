@@ -1,34 +1,33 @@
-const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
-  context: __dirname + '/src',
-  entry: {
-    javascript: './index.js',
-  },
-
+  entry: path.resolve('src', 'index.js'),
   output: {
-    path: __dirname + '/dist',
+    path: path.resolve('dist'),
     filename: 'bundle.js'
   },
-
-  devServer: {
-    contentBase: 'dist',
-    port: 8000
-  },
-
-  devtool: 'source-map',
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: path.resolve('node_modules'),
         loader: 'babel-loader',
-        query:{
-          presets: [
-            ['es2015', { modules: false }]
-          ]
+        options: {
+          presets: ['es2015']
         }
       }
     ]
+  },
+  resolve: {
+    modules: [
+      path.resolve('src'),
+      'node_modules'
+    ]
+  },
+  devtool: 'source-map',
+  devServer: {
+    port: 8000,
+    contentBase: path.resolve('dist'),
+    watchContentBase: true
   }
 };

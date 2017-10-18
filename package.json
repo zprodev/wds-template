@@ -10,9 +10,10 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "npm run mkdist && npm run cphtml && webpack-dev-server",
-    "build": "npm run mkdist && npm run cphtml && webpack",
+    "start": "npm run mkdist && npm run cpassets -- -w & npm run cphtml -- -w & webpack-dev-server",
+    "build": "npm run mkdist && npm run cpassets && npm run cphtml && webpack",
     "mkdist": "rimraf dist/ && mkdirp dist/",
+    "cpassets": "cpx 'assets/**/*' dist/",
     "cphtml": "cpx src/index.html dist/"
   },
   "dependencies": {},
