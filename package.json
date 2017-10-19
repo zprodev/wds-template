@@ -1,6 +1,6 @@
 {
   "name": "wds-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Template of webpack-dev-server",
   "author": "zprodev <zproject.develop@gmail.com> (https://github.com/zprodev)",
   "license": "MIT",
