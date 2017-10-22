@@ -13,7 +13,7 @@ module.exports = {
         exclude: path.resolve('node_modules'),
         loader: 'babel-loader',
         options: {
-          presets: ['es2015']
+          presets: [['env', {"targets": {"node": "current"}}]]
         }
       }
     ]
