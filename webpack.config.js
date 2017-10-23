@@ -1,7 +1,10 @@
 const path = require('path');
 
 module.exports = {
-  entry: path.resolve('src', 'index.js'),
+  entry: [
+    'babel-polyfill',
+    path.resolve('src', 'index.js')
+  ],
   output: {
     path: path.resolve('dist'),
     filename: 'bundle.js'
@@ -13,7 +16,14 @@ module.exports = {
         exclude: path.resolve('node_modules'),
         loader: 'babel-loader',
         options: {
-          presets: [['env', {"targets": {"node": "current"}}]]
+          presets: [
+            ['env', {
+              'targets': {
+                'node': 'current',
+                'browsers': 'last 2 versions'
+              }
+            }]
+          ]
         }
       }
     ]
