@@ -11,7 +11,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run mkdist && npm run cpassets -- -w & npm run cphtml -- -w & webpack-dev-server",
-    "build": "npm run mkdist && npm run cpassets && npm run cphtml && webpack",
+    "build": "npm run mkdist && npm run cpassets && npm run cphtml && webpack --optimize-minimize",
     "mkdist": "rimraf dist/ && mkdirp dist/",
     "cpassets": "cpx 'assets/**/*' dist/",
     "cphtml": "cpx src/index.html dist/"
