@@ -1,14 +1,5 @@
 {
-  "name": "wds-template",
-  "version": "1.1.0",
-  "description": "Template of webpack-dev-server",
-  "author": "zprodev <zproject.develop@gmail.com> (https://github.com/zprodev)",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zprodev/wds-template.git"
-  },
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "start": "npm run mkdist && npm run cpassets -- -w & npm run cphtml -- -w & webpack-dev-server",
     "build": "npm run mkdist && npm run cpassets && npm run cphtml && webpack --optimize-minimize",
