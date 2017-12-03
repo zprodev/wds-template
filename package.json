@@ -1,22 +1,25 @@
 {
   "private": true,
   "scripts": {
-    "start": "npm run mkdist && npm run cpassets -- -w & npm run cphtml -- -w & webpack-dev-server",
-    "build": "npm run mkdist && npm run cpassets && npm run cphtml && webpack --optimize-minimize",
+    "start": "npm-run-all mkdist --parallel \"cpassets -- -w\" \"cphtml -- -w\" webpack-dev",
+    "build": "npm-run-all mkdist cpassets cphtml webpack",
     "mkdist": "rimraf dist/ && mkdirp dist/",
-    "cpassets": "cpx 'assets/**/*' dist/",
-    "cphtml": "cpx src/index.html dist/"
+    "cpassets": "cpx \"assets/**/*\" dist/",
+    "cphtml": "cpx src/index.html dist/",
+    "webpack": "webpack --optimize-minimize",
+    "webpack-dev": "webpack-dev-server"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0"
   },
   "devDependencies": {
-    "cpx": "^1.5.0",
-    "mkdirp": "^0.5.1",
-    "rimraf": "^2.6.2",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
+    "cpx": "^1.5.0",
+    "mkdirp": "^0.5.1",
+    "npm-run-all": "^4.1.2",
+    "rimraf": "^2.6.2",
     "webpack": "^3.5.6",
     "webpack-dev-server": "^2.7.1"
   }
