@@ -16,11 +16,11 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           presets: [
-            ['@babel/env', {
-              'useBuiltIns': 'usage',
-              'targets': {
-                'node': 'current',
-                'browsers': 'last 2 versions'
+            ['@babel/preset-env', {
+              useBuiltIns: 'usage',
+              targets: {
+                node: 'current',
+                browsers: 'last 2 versions'
               }
             }]
           ]
