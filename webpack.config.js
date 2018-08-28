@@ -2,7 +2,6 @@ const path = require('path');
 
 module.exports = {
   entry: [
-    'babel-polyfill',
     path.resolve('src', 'index.js')
   ],
   output: {
@@ -17,7 +16,8 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           presets: [
-            ['env', {
+            ['@babel/env', {
+              'useBuiltIns': 'usage',
               'targets': {
                 'node': 'current',
                 'browsers': 'last 2 versions'
